@@ -3,4 +3,4 @@ Tecnologías utilizadas:
 -HTML5
 -CSS3
 -JAVASCRIPT
--BOOSTRAP V3,4,1
+-BOOSTRAP V5.1
