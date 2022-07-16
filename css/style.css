@@ -1,7 +1,7 @@
-.navbar{
-    background-color: steelblue;
-    color: white;
+#color_nav{
+    background-color: sienna;
 }
+
 #style_navbar{
     color: white;
     font-size: larger;
@@ -9,4 +9,7 @@
 }
 #hojas{
     image-resolution: 10px;
+}
+#font-size{
+    font-size: x-large;
 }
