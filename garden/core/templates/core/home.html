@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block dinamico %}
+    <!-- CARROUSEL -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'core/img/planta1.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'core/img/semilla1.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'core/img/arbusto1.png' %}" class="d-block w-100" alt="...">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <section class="text-center">
+        <p>"Somos una comunidad que estamos por el apoyo a diversas fundaciones con sin fines de lucro, tu aporte es muy valioso para nuestra comunidad, por cada compra que realizes al estar subscrito estarás aportando con un 5% para esta noble causa"</p>
+        <div class="row mt-5">
+            <h3>Algunos De Nuestros Productos</h3>
+        </div>
+        
+    </section>
+{% endblock %}
