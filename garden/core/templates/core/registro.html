@@ -3,64 +3,90 @@
 {% load static %}
 <!-- IMPORTACIÓN DE BLOQUE JAVASCRIPT -->
 {% block javascript %}
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="{% static 'core/js/validar.js' %}"></script>
 {% endblock %}
 <!-- SE LLAMA AL BLOQUE DINAMICO CREADO EN BASE.HTML PARA CARGAR EL FORMULARIO, ESTE BLOQUE CONTIENE LA ESTRUCTURA QUE SE DEBE MANTENER DE LA PÁGINA PRINCIPAL -->
 {% block dinamico%}
-  <form class="row g-3 ms-4" method="POST">
-    <div class="row g-3">  
-        <div class="col-md-4">
-          <label for="validationServer01" class="form-label">Nombre</label>
-          <input type="text" class="form-control " id="validationServer01" placeholder="Ingrese su nombre" required>
-          
-        </div>
-        <div class="col-md-4">
-          <label for="validationServer02" class="form-label">Apellido</label>
-          <input type="text" class="form-control " id="validationServer02" placeholder="Ingrese su apellido" required>
-          
-        </div>
+  
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="name" value="Mark" required>
+    <div class="valid-feedback">
+      Bien hecho!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Apellido</label>
+    <input type="text" class="form-control" id="last_name" value="Otto" required>
+    <div class="valid-feedback">
+      Bien hecho!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">Email</label>
+    <div class="input-group has-validation">
+      <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend" required value="luis">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <div class="valid-feedback">
+        Bien hecho!
       </div>
-      <div class="row g-3">   
-        <div class="col-md-4">
-          <label for="validationServerUsername" class="form-label">Email</label>
-          <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend3">@</span>
-            <input type="email" class="form-control " id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" placeholder="example@gmail.com" required>
-            
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationServer03" class="form-label">Contraseña</label>
-          <input type="password" class="form-control " id="contrasenia" name="contrasenia" aria-describedby="validationServer03Feedback" required>
-        </div>
-        <div class="col-md-4">
-          <label for="validationServer03" class="form-label">Confirmar contraseña</label>
-          <input type="password" class="form-control " id="confirmar_contrasenia" name="confirmar_contrasenia" aria-describedby="validationServer03Feedback" required>
-        </div>
-      </div>  
-      <div class="row g-3">
-        <div class="col-md-5">
-          <label for="validationServer04" class="form-label">Tipo Usuario</label>
-          <select class="form-select " id="validationServer04" aria-describedby="validationServer04Feedback" required>
-            <option selected disabled value="">Elige una opción</option>
-            <option>Cliente</option>
-            <option>Vendedor</option>
-          </select>
-          
-        </div>
+      <div class="invalid-feedback">
+        Ingresa tu email.
       </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-          <label class="form-check-label" for="invalidCheck3">
-            Acepta los términos y condiciones
-          </label>
-          
-        </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Contraseña</label>
+    <input type="text" class="form-control" id="password" value="Otto" required>
+    <div class="valid-feedback">
+      Bien hecho!
+    </div>
+    <div class="invalid-feedback">
+      Ingresa tu contraseña.
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Confirma tu contraseña</label>
+    <input type="text" class="form-control" id="password2" value="Otto" required>
+    <div class="valid-feedback">
+      Bien hecho!
+    </div>
+    <div class="invalid-feedback">
+      Confirma tu contraseña.
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationCustom04" class="form-label">¿Qué tipo de usuario eres?</label>
+    <select class="form-select" id="validationCustom04" required>
+      <option selected disabled value="">Elige un usuario</option>
+      <option>CLIENTE</option>
+      <option>ADMINISTRADOR</option>
+
+    </select>
+    <div class="valid-feedback">
+      Bien hecho!
+    </div>
+    <div class="invalid-feedback">
+      Selecciona un usuario.
+    </div>
+  </div>
+  
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Acepta las términos y condiciones.
+      </label>
+      <div class="invalid-feedback">
+        Debe aceptar antes de enviar.
       </div>
-      <div class="col-12">
-        <button class="btn button-register" type="submit" id="button-register">Registrar</button>
-      </div>
-  </form>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Registrar</button>
+  </div>
+</form>
 <!-- TÉRMINO DEL BLOQUE DINAMICO   -->
 {% endblock %}  
