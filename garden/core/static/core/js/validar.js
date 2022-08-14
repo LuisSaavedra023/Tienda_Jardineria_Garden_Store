@@ -18,9 +18,29 @@
                 //CAPTURACIÓN DE VALORES.
                 const password1 = document.querySelector("#password").value
                 const password2 = document.querySelector("#password2").value
-                //CUANDO LAS CONTRASEÑAS NO COINCIDAN.
+                const email = document.querySelector("#email").value
+                //const respuestaEmail = document.getElementById("respuesta_email");
+
+                //EXPRESIÓN REGULAR DE VALIDACIÓN DE CORREO.
+                let regExpr = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
+                let emailOk = regExpr.test(email);
+
+                //CUANDO EL CORREO SEA ERRÓNEO.
+                if (emailOk === false){
+                  console.log("correo incorrecto")
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'ERROR',
+                    text: 'El correo ingresado es inválido.',
+                    footer: 'Por favor verifica que el dominio del correo sea el correcto.'
+                  })
+                  //respuestaEmail.textContent = 'El correo ingresado no es válido.'
+                }else{
+                    //CUANDO LAS CONTRASEÑAS NO COINCIDAN.
                 if (password1 != password2){
-                    console.log("Las contraseñas no coinciden")
+                  console.log("error de correo " + emailOk)  
+                  //console.log("Las contraseñas no coinciden")
+                    
                     Swal.fire({
                         icon: 'error',
                         title: 'ERROR',
@@ -38,7 +58,7 @@
                         timer: 2500
                       }) 
                 }
-    
+                }   
                            
           }
   

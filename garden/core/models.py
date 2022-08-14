@@ -10,6 +10,8 @@ class Cliente(models.Model):
     p_apellido = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=8)
+    password2 = models.CharField(max_length=8)
+    usuario = models.CharField(max_length=8)
 
 class Boleta(models.Model):
 
