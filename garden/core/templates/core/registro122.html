@@ -1,0 +1,16 @@
+{% extends 'core/base.html'%}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block dinamico %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        
+            {{ form | crispy }}
+        
+        <input type="submit" value="Registrar">
+        
+    </form>
+{% endblock %}

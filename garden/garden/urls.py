@@ -20,5 +20,6 @@ from django.urls import path, include#SE AGREGA EL INCLUDE PARA LLAMAR AL URLS C
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
+    
 
 ]

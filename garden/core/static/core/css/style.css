@@ -39,3 +39,18 @@ h3{
 .button-register:hover{
     background-color: #A9CBEB;
 }
+/* CLASES CREADAS PARA VALIDACIÓN JAVASCRIP */
+.field_invalid{
+    border: solid 1px red;
+    box-shadow: 0 0 10px red;
+}
+.field_valid{
+    border: solid 1px green;
+    box-shadow: 0 0 10px green;
+}
+.text_invalid{
+    color: red;
+}
+.text_valid{
+    color: green;
+}

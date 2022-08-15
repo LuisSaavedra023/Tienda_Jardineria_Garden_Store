@@ -1,8 +1,13 @@
 from pyexpat import model
-from tkinter import CASCADE
+
 from django.db import models
 
 # Create your models here.
+class CategoriaCli(models.Model):
+    nombre = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.nombre
 #CREACIÓN DE TABLA CLIENTE SE UTILIZARÁ PARA RECIBIR LOS DATOS DEL FORMULARIO. 
 class Cliente(models.Model):
     #DJANGO CREA POR DEFECTO EL ID.
@@ -11,10 +16,10 @@ class Cliente(models.Model):
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=8)
     password2 = models.CharField(max_length=8)
-    usuario = models.CharField(max_length=8)
+    usuario = models.CharField(max_length=20)
+    #categoria_cliente = models.ForeignKey(CategoriaCli, on_delete=models.CASCADE)
 
-class Boleta(models.Model):
+    def __str__(self):
+        return self.p_nombre
 
-    producto = models.CharField(max_length= 80)
-    """CREACIÓN DE LLAVE FORÁNEA SE TRASPASA LA LLAVE DE CLIENTE A BOLETA SE EJECUTA EL ELIMINADO DE DATOS EN CASCADA AL ELIMINAR UNA BOLETA DE ELIMINA LOS DATOS DEL ID DEL CLIENTE."""
-    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)    
+  
